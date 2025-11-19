@@ -12,5 +12,22 @@ def test_make_simple_addition():
     operation = "10 + 5"
     expected_value = 15
     assert sut.addition(operation) == expected_value
-
     
+# Ce qu'il devrait se passer
+def test_should_negatives_numbers_addition():
+    sut = Operators()
+    operation = "5 + -4 + -1"
+    expected_value = 0
+    assert sut.addition(operation) == expected_value
+# Etat actuel
+def test_negatives_numbers_addition():
+    sut = Operators()
+    operation = "5 + -4 + -1"
+    expected_value = None
+    assert sut.addition(operation) == expected_value
+
+def test_random_spaces_addition():
+    sut = Operators()
+    operation = "   5+  7  "
+    expected_value = 12
+    assert sut.addition(operation) == expected_value
