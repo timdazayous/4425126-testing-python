@@ -58,6 +58,7 @@ class TestAdditionOperator(unittest.TestCase):
         expected_value = None
         self.assertEqual(sut.addition(operation), expected_value)
 
+class TestSubstractionOperator(unittest.TestCase):
     # substraction
     def test_standard_substraction(self):
         sut = Operators()
@@ -95,6 +96,7 @@ class TestAdditionOperator(unittest.TestCase):
         expected_value = 42
         self.assertEqual(sut.substraction(operation), expected_value)
 
+class TestMultiplicationOperator(unittest.TestCase):
     # multiplication
     def test_standard_multiplication(self):
         sut = Operators()
@@ -121,7 +123,8 @@ class TestAdditionOperator(unittest.TestCase):
         self.assertEqual(sut.multiplication(operation), expected_value)
 
     ## to be coninued ...
-    
+
+class TestDivisionOperator(unittest.TestCase):
     # division
     def test_should_make_division(self):
         sut = Operators()
