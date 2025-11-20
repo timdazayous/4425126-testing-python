@@ -1,11 +1,11 @@
 from calculate.operators import Operators
-from calculate import view
+from calculate.view import View
 
 from calculate.controller import Controller
 
 def test_quit_without_infinite_loop(mocker):
     sut = Controller()
-    mock = mocker.patch('Calculate.view.view.get_user_input', return_value = 5)
+    mock = mocker.patch('calculate.view.view.get_user_input', return_value = 5)
 
 
 def test_addition(mocker):
@@ -30,3 +30,10 @@ def test_substraction(mocker):
     mock = mocker.patch('calculate.view.View.get_user_input')
 
     mock.side_effect = ["2", "10-5", "5"]
+
+    mocker.patch('calculate.view.View.Operators.substraction', return_value = expected_value)
+    mocker.patch('calculate.view.View.continue_message')
+
+    sut.run()
+    assert sut.result == expected_value
+
